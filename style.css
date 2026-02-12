@@ -1,0 +1,511 @@
+/* ============ Reset ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Tahoma", "Arial", sans-serif;
+}
+
+body {
+    direction: rtl;
+    background: radial-gradient(circle at center, #050816 0%, #020617 40%, #020314 100%);
+    color: #f9fafb;
+}
+
+/* ============ Header ============ */
+.body-header {
+    height: 70px;
+    background-color: #020617;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo-image img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #74ADC8;
+    object-fit: cover;
+}
+
+#logo-name {
+    font-size: 22px;
+    color: #e5e7eb;
+}
+
+/* ============ Layout ============ */
+#main-div {
+    display: flex;
+    padding: 15px 15px 25px;
+    gap: 15px;
+    margin-top: 70px;
+}
+
+main {
+    flex: 1;
+}
+
+/* ============ Aside (تفاسير) ============ */
+aside {
+    width: 360px;
+    background: rgba(15,23,42,0.95);
+    border-radius: 8px;
+    border: 1px solid #1e293b;
+    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recommended-header {
+    font-size: 18px;
+    color: #e5e7eb;
+    margin-bottom: 8px;
+}
+
+.recommended-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.aside-playlist {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, #020617, #111827);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #1f2937;
+    text-decoration: none;
+    color: #e5e7eb;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+
+.aside-playlist img {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    margin-left: 8px;
+    object-fit: cover;
+}
+
+.heading-container h3 {
+    font-size: 15px;
+}
+
+.heart {
+    margin-right: auto;
+    color: #22c55e;
+}
+
+.aside-playlist:hover {
+    background: linear-gradient(90deg, #0f172a, #111827);
+    border-color: #22c55e;
+    transform: translateY(-1px);
+}
+
+/* ============ Section headings ============ */
+.section-heading {
+    font-size: 22px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #bfdbfe;
+}
+
+.section-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* ============ Cover images ============ */
+.cover-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px solid #74ADC8;
+    background-color: rgba(10, 23, 55, 0.9);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.cover-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.cover-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    border-color: #a5d8ff;
+}
+
+.cover-image:hover img {
+    transform: scale(1.08);
+    filter: brightness(1);
+}
+
+/* ============ Play song cards ============ */
+.play-song {
+    position: relative;
+    width: 260px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    padding-left: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    background: rgba(13, 27, 60, 0.9);
+    border: 1px solid #74ADC8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    color: #f9fafb;
+}
+
+.play-song:hover {
+    box-shadow: 0 0 20px rgba(116, 173, 200, 0.7);
+    transform: translateY(-3px);
+    border-color: #a5d8ff;
+}
+
+
+.play-song .sora-image,
+.song-tile-image {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+.play-song .sora-image img,
+.song-tile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-song h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.play-song h4 {
+    font-size: 14px;
+    color: #a0c4ff;
+}
+
+/* زر التشغيل */
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    font-size: 26px;
+    color: #74ADC8;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.play-song:hover .play-button {
+    opacity: 1;
+}
+
+/* ============ Artists ============ */
+.artist-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #74ADC8;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.95);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.artist-image:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    border-color: #a5d8ff;
+}
+
+.artist-image:hover img {
+    transform: scale(1.08);
+    filter: brightness(1);
+}
+
+.artist-details {
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transition: bottom 0.3s ease;
+}
+
+.artist-image:hover .artist-details {
+    bottom: 10px;
+}
+
+.artist-details p {
+    font-size: 16px;
+    color: #f5f5f5;
+}
+
+/* ============ Stations (مواضع القراءة) ============ */
+.station-image {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #74ADC8;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.station-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.station-image:hover {
+    transform: translateY(0px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+    border-color: #a5d8ff;
+}
+
+.station-image:hover img {
+    transform: scale(1.06);
+    filter: brightness(1);
+}
+
+    .station-details {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 8, 39, 0.85);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: scaleY(0);
+        transform-origin: bottom;   /* يبدأ من الأسفل */
+        transition: transform 0.3s ease;
+    }
+
+    .station-image:hover .station-details {
+        transform: scaleY(1);
+    }
+.stations-container {
+    display: flex;
+    justify-content: center;   /* يخليهم في النص */
+    align-items: center;
+    gap: 25px;                 /* مسافة بينهم */
+    flex-wrap: wrap;           /* ينزلوا سطر جديد لو الشاشة صغيرة */
+}
+
+
+
+/* ============ Floating player (نفس القديم) ============ */
+#floating-div {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(13, 27, 60, 0.97);
+    padding: 10px 15px;
+    border-top: 1px solid #74ADC8;
+    z-index: 1001;
+}
+
+#floating-div:target {
+    display: block;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 1024px) {
+    #main-div {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-content {
+        justify-content: center;
+    }
+
+    .play-song {
+        width: 100%;
+        height: 180px;
+        padding-left: 140px;
+    }
+
+    .cover-image {
+        width: 48%;
+        height: 150px;
+    }
+
+    .station-image {
+        width: 48%;
+        height: 150px;
+    }
+
+    .artist-image {
+        width: 130px;
+        height: 130px;
+    }
+}
+/* صفحة السورة */
+.surah-page {
+  direction: rtl;
+  margin: 0;
+  padding: 40px 20px;
+  background: #e9dfc7; /* خلفية ورق قديم */
+  font-family: 'Amiri', serif;
+  display: flex;
+  justify-content: center;
+}
+
+/* صندوق السورة */
+.surah-page .surah-container {
+  background: #fdf8e8; /* لون صفحة المصحف */
+  padding: 60px 70px;
+  border-radius: 22px;
+  max-width: 950px;
+  width: 100%;
+
+  font-size: clamp(24px, 3vw, 38px);
+  line-height: 2.9;
+  color: #3a2e1b; /* بني داكن مريح */
+
+  text-align: justify;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+  border: 10px solid #cbb77c; /* إطار ذهبي هادئ */
+
+  position: relative;
+}
+.audio-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  padding: 10px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  color: #fff;
+  z-index: 999;
+}
+
+.audio-controls button {
+  background: linear-gradient(45deg,#ff416c,#ff4b2b);
+  border: none;
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.audio-controls button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px #ff4b2b;
+}
+
+.audio-controls #currentTitle {
+  font-family: 'Amiri', serif;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.section-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* المسافة بين الأغلفة */
+  justify-content: center; /* توسيط الأغلفة */
+}
+
+.cover-song {
+  width: 200px; /* عرض ثابت لكل غلاف */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.cover-song img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.cover-song:hover {
+  transform: scale(1.05);
+}
+
+.cover-song h3, .cover-song h4 {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #fff; /* أو حسب الخلفية */
+}
+.audio-controls {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+}
+.audio-controls button {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+}
