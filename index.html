@@ -406,6 +406,11 @@
         nextBtn.addEventListener("click", () => {
           if (currentIndex < covers.length - 1) playCover(currentIndex + 1);
         });
+
+        // Add ended listener to automatically update button when audio finishes
+        audioPlayer.addEventListener("ended", () => {
+          playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+        });
       });
     </script>
 
