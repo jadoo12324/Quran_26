@@ -71,17 +71,6 @@
             <i class="fas fa-quran"></i> السور
           </h1>
 
-          <!-- مشغل الصوت + الأزرار (يمكن استخدام نفس مشغل القديم) -->
-          <div id="audioControls2" class="audio-controls">
-            <button id="prevBtn2"><i class="fas fa-backward"></i></button>
-            <button id="playPauseBtn2"><i class="fas fa-play"></i></button>
-            <button id="nextBtn2"><i class="fas fa-forward"></i></button>
-            <span id="currentTitle2">اختر سورة لتشغيلها</span>
-          </div>
-
-          <!-- عنصر الصوت المخفي -->
-          <audio id="audioPlayer2"></audio>
-
           <!-- الأغلفة -->
           <div class="section-content">
 
@@ -136,61 +125,8 @@
           </div>
         </section>
 
-        <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const audioPlayer2 = document.getElementById("audioPlayer2");
-          const playPauseBtn2 = document.getElementById("playPauseBtn2");
-          const currentTitle2 = document.getElementById("currentTitle2");
-          const prevBtn2 = document.getElementById("prevBtn2");
-          const nextBtn2 = document.getElementById("nextBtn2");
-
-          const covers2 = document.querySelectorAll(".cover-song");
-          let currentIndex2 = -1;
-
-          function togglePlayPause2() {
-            if(currentIndex2 === -1) return;
-            if(audioPlayer2.paused) {
-              audioPlayer2.play();
-              playPauseBtn2.innerHTML = '<i class="fas fa-pause"></i>';
-            } else {
-              audioPlayer2.pause();
-              playPauseBtn2.innerHTML = '<i class="fas fa-play"></i>';
-            }
-          }
-
-          function playCover2(index) {
-            if(index < 0 || index >= covers2.length) return;
-            currentIndex2 = index;
-
-            covers2.forEach(c => c.classList.remove("active"));
-            const cover = covers2[index];
-            cover.classList.add("active");
-
-            audioPlayer2.src = cover.dataset.audio;
-            currentTitle2.textContent = cover.dataset.title;
-            audioPlayer2.play();
-            playPauseBtn2.innerHTML = '<i class="fas fa-pause"></i>';
-          }
-
-          covers2.forEach((cover, idx) => {
-            cover.addEventListener("click", () => playCover2(idx));
-          });
-
-          playPauseBtn2.addEventListener("click", togglePlayPause2);
-
-          prevBtn2.addEventListener("click", () => {
-            if(currentIndex2 > 0) playCover2(currentIndex2 - 1);
-          });
-
-          nextBtn2.addEventListener("click", () => {
-            if(currentIndex2 < covers2.length - 1) playCover2(currentIndex2 + 1);
-          });
-        });
-        </script>
-
-
-        <!-- مواضع قراءة القرآن الكريم -->
         <section class="station">
+====
           <h1 class="section-heading">
             <i class="fas fa-quran"></i> فضائل سور القرآن الكريم
           </h1>
@@ -366,8 +302,11 @@
         const currentTitle = document.getElementById("currentTitle");
         const prevBtn = document.getElementById("prevBtn");
         const nextBtn = document.getElementById("nextBtn");
-        const covers = document.querySelectorAll(".cover-image");
-
+        
+        const coversOld = document.querySelectorAll(".cover-image");
+        const coversNew = document.querySelectorAll(".cover-song");
+        
+        let currentType = null; // 'old' or 'new'
         let currentIndex = -1;
 
         function togglePlayPause() {
@@ -381,11 +320,16 @@
           }
         }
 
-        function playCover(index) {
+        function playItem(index, type) {
+          const covers = (type === 'old') ? coversOld : coversNew;
           if (index < 0 || index >= covers.length) return;
+          
           currentIndex = index;
+          currentType = type;
 
-          covers.forEach(c => c.classList.remove("active"));
+          // Clear active states
+          document.querySelectorAll(".cover-image, .cover-song").forEach(c => c.classList.remove("active"));
+          
           const cover = covers[index];
           cover.classList.add("active");
 
@@ -395,19 +339,25 @@
           playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
         }
 
-        covers.forEach((cover, index) => {
-          cover.addEventListener("click", () => playCover(index));
+        coversOld.forEach((cover, index) => {
+          cover.addEventListener("click", () => playItem(index, 'old'));
+        });
+
+        coversNew.forEach((cover, index) => {
+          cover.addEventListener("click", () => playItem(index, 'new'));
         });
 
         playPauseBtn.addEventListener("click", togglePlayPause);
+        
         prevBtn.addEventListener("click", () => {
-          if (currentIndex > 0) playCover(currentIndex - 1);
+          if (currentIndex > 0) playItem(currentIndex - 1, currentType);
         });
+        
         nextBtn.addEventListener("click", () => {
-          if (currentIndex < covers.length - 1) playCover(currentIndex + 1);
+          const covers = (currentType === 'old') ? coversOld : coversNew;
+          if (currentIndex < covers.length - 1) playItem(currentIndex + 1, currentType);
         });
 
-        // Add ended listener to automatically update button when audio finishes
         audioPlayer.addEventListener("ended", () => {
           playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
         });
