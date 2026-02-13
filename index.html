@@ -1,51 +1,108 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8" />
-    <title>بالقرآن نحيا</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>بالقرآن نحيا</title>
+  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"/>
+</head>
+<body>
 
-  <body>
-    <header class="body-header">
-      <div id="logo">
-        <div id="logo-image"><img src="Home_pics/logo-main.jpg" /></div>
-        <div id="logo-name">مشغل القرآن الكريم</div>
+  <header class="body-header">
+    <div id="logo">
+      <div id="logo-image">
+        <img src="images/خلفية.jpeg" />
       </div>
-    </header>
+      <div id="logo-name">تلاوات مختارة</div>
+    </div>
 
-    <div id="main-div">
-      <main>
-        
-        <section class="new">
-          <h1 class="section-heading">
-            <i class="fas fa-layer-group"></i> تسجيلات قديمة
-          </h1>
+    <nav class="top-nav">
+      <ul>
+        <li><a href="#old">تسجيلات قديمة</a></li>
+        <li><a href="#seven">السبع الطوال</a></li>
+        <li><a href="#one">العشر الأخير</a></li>
+        <li><a href="#rare">تلاوات نادرة</a></li>
+        <li><a href="#virtues">فضائل السور</a></li>
+        <li><a href="#latest">أحدث التلاوات</a></li>
+        <li><a href="#readers">القراء</a></li>
+      </ul>
+    </nav>
+  </header>
 
-          <!-- مشغل الصوت + الأزرار -->
-          <div id="audioControls" class="audio-controls">
-            
-            <button id="prevBtn"><i class="fas fa-backward"></i></button>
-            <button id="playPauseBtn"><i class="fas fa-play"></i></button>
-            <button id="nextBtn"><i class="fas fa-forward"></i></button>
-            <span id="currentTitle">اختر سورة لتشغيلها</span>
-          </div>
+  <!-- الحاوية الأساسية -->
+ 
 
-          <audio id="audioPlayer"></audio>
 
-          <div class="section-content hover-effect">
-            <div class="cover-image"
-                 data-audio="https://server11.mp3quran.net/a_jbr/012.mp3"
-                 data-title="سورة يوسف - الشيخ علي جابر">
-              <img src="images/جابر.jpg" />
+    
+      <section id="old" class="new">
+        <h1 class="section-heading">
+          <i class="fas fa-layer-group"></i> تسجيلات قديمة
+        </h1>
+
+        <div class="page-wrapper">
+
+          <!-- التفاسير على اليسار -->
+          <aside class="sidebar">
+            <h2 class="recommended-header">تفاسير القرآن الكريم</h2>
+            <div class="recommended-list">
+              <a href="https://shamela.ws/book/23604" target="_blank">
+                <div class="aside-playlist">
+                  <img src="موقع قران/ابن كثير.jpg" />
+                  <div class="heading-container">
+                    <h3>تفسير ابن كثير</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="https://shamela.ws/book/7798" target="_blank">
+                <div class="aside-playlist">
+                  <img src="موقع قران/الطبري.jpg" />
+                  <div class="heading-container">
+                    <h3>تفسير الطبري</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="https://shamela.ws/book/20855" target="_blank">
+                <div class="aside-playlist">
+                  <img src="موقع قران/القرطبي.jpg" />
+                  <div class="heading-container">
+                    <h3>تفسير القرطبي</h3>
+                  </div>
+                </div>
+              </a>
+              <a href="https://read.tafsir.one/alsidi#pg_1" target="_blank">
+                <div class="aside-playlist">
+                  <img src="موقع قران/السعدي.jpg" />
+                  <div class="heading-container">
+                    <h3>تفسير السعدي</h3>
+                  </div>
+                </div>
+              </a>
             </div>
+          </aside>
+
+
+      <div class="main-content">
+        <!-- مشغل الصوت + الأزرار -->
+        <div id="audioControls" class="audio-controls">
+          <button id="prevBtn"><i class="fas fa-backward"></i></button>
+          <button id="playPauseBtn"><i class="fas fa-play"></i></button>
+          <button id="nextBtn"><i class="fas fa-forward"></i></button>
+          <span id="currentTitle">اختر سورة لتشغيلها</span>
+        </div>
+
+        <audio id="audioPlayer"></audio>
+
+        <div class="section-content hover-effect">
+          <div class="cover-image"
+               data-audio="https://server11.mp3quran.net/a_jbr/012.mp3"
+               data-title="سورة يوسف - الشيخ علي جابر">
+            <img src="images/جابر.jpg" />
+          </div>
 
             <div class="cover-image"
                  data-audio="https://server7.mp3quran.net/basit/Almusshaf-Al-Mojawwad/015.mp3"
@@ -65,69 +122,228 @@
               <img src="images/قديم محمد أيوب.jpeg" />
             </div>
           </div>
+      </div>
+      </section>
+
+          <section id="seven" class="seven">
+          <h1 class="section-heading">
+            <i class="fas fa-quran"></i> السبع الطوال
+          </h1>
+
+          <!-- الأغلفة -->
+          <div class="section-content7">
+            
+            <div class="cover-song7"
+                 data-audio="https://server8.mp3quran.net/ayyub/001.mp3"
+                 data-title="سورة الفاتحة - الشيخ محمد أيوب ">
+              <img src="موقع قران/الفاتحة 2.jpg" />
+              <h3>سورة الفاتحة</h3>
+              <h4>الشيخ: محمد أيوب</h4>
+
+            </div>
+
+            <div class="cover-song7"
+                 data-audio="https://server8.mp3quran.net/ayyub/002.mp3"
+                 data-title="سورة البقرة - الشيخ محمد أيوب">
+              <img src="موقع قران/القرة2.jpg" />
+              <h3>سورة البقرة</h3>
+              <h4>الشيخ: محمد أيوب</h4>
+            </div>
+
+            <div class="cover-song7"
+                 data-audio="https://server8.mp3quran.net/ayyub/003.mp3"
+                 data-title="سورة آل عمران - الشيخ محمد أيوب ">
+              <img src="موقع قران/ال عمران 2.jpg" />
+              <h3>سورة آل عمران </h3>
+              <h4>الشيخ: محمد أيوب</h4>
+            </div>
+
+            <div class="cover-song7"
+                 data-audio="https://server8.mp3quran.net/ayyub/004.mp3"
+                 data-title="سورة النساء - الشيخ محمد أيوب">
+              <img src="موقع قران/النساء2.jpg" />
+              <h3>سورة النساء</h3>
+              <h4>الشيخ: محمد أيوب</h4>
+            </div>
+
+            <div class="cover-song7"
+                 data-audio="https://server8.mp3quran.net/ayyub/005.mp3"
+                 data-title="سورة المائدة - الشيخ محمد أيوب">
+              <img src="موقع قران/المائدة 2.jpg" />
+              <h3>سورة المائدة</h3>
+              <h4>الشيخ: محمد أيوب</h4>
+
+            </div>
+
+            <div class="cover-song7"
+                 data-audio="https://server8.mp3quran.net/ayyub/006.mp3"
+                 data-title="سورة الأنعام - الشيخ محمد أيوب">
+              <img src="موقع قران/الانعام 2.jpg" />
+              <h3>سورة الأنعام</h3>
+              <h4>الشيخ: محمد أيوب</h4>
+
+            </div>
+
+            <div class="cover-song7"
+                 data-audio="https://server8.mp3quran.net/ayyub/007.mp3"
+                 data-title="سورة الأعراف - الشيخ محمد أيوب ">
+              <img src="موقع قران/الاعراف 2.jpg" />
+              <h3>سورة الأعراف</h3>
+              <h4>الشيخ: محمد أيوب</h4>
+
+            </div>
+          
+
+          </div>
+        </section>
+
+          <section id="one" class="one">
+          <h1 class="section-heading">
+            <i class="fas fa-quran1"></i> العشر الأخير
+          </h1>
+
+          <!-- الأغلفة -->
+          <div class="section-content1">
+
+            <div class="cover-song1"
+                 data-audio="موقع قران/القارئ بدر التركي جزء عم(MP3_160K).mp3.mpeg"
+                 data-title="جزء عم">
+              <img src="موقع قران/عم.jpg" />
+              <h3>جزء عم</h3>
+              <h4>الشيخ: بدر التركي</h4>
+            </div>
+
+            <div class="cover-song1"
+                 data-audio="موقع قران/جزء تبارك لفضيلة الشيخ بدر التركي من المسجد الحرام.mp3"
+                 data-title="جزء تبارك">
+              <img src="موقع قران/تبارك.png" />
+              <h3>جزء تبارك</h3>
+              <h4>الشيخ: بدر التركي</h4>
+            </div>
+
+            <div class="cover-song1"
+                 data-audio="موقع قران/جزء المجادلة كاملاً بصوت الشيخ بدر بن محمد التركي.mp3"
+                 data-title="جزء قد سمع">
+              <img src="موقع قران/قد سمع.jpg" />
+              <h3>جزء قد سمع</h3>
+              <h4>الشيخ: بدر التركي</h4>
+            </div>
+
+          </div>
+
+          <!-- مشغل عام -->
+          <audio id="audioPlayer" controls style="width: 100%; margin-top: 20px;"></audio>
         </section>
 
 
-        <section class="latest_release">
+
+
+
+
+
+
+        
+          <section id="rare" class="nader">
           <h1 class="section-heading">
-            <i class="fas fa-quran"></i> السور
+            <i class="fas fa-quran3"></i> تلاوات نادرة
           </h1>
 
           <!-- الأغلفة -->
           <div class="section-content">
 
-            <div class="cover-song"
-                 data-audio="https://server8.mp3quran.net/afs/002.mp3"
-                 data-title="سورة البقرة - الشيخ مشاري العفاسي">
-              <img src="images/العفاسي.jpeg" />
-              <h3>سورة البقرة</h3>
-              <h4>الشيخ: مشاري العفاسي</h4>
+            <div class="cover-song3"
+                 data-audio="نادرة/ولقد أريناه آياتنا كلها فكذب وأبى - تلاوة مميزة لسورة طه بصوت الشيخ محمد أيوب (2).m4a"
+                 data-title="سورة طه - الشيخ محمد أيوب">
+              <img src="صور نادر/محمد ايوب 3.jpg" />
+              <h3>سورة طه</h3>
+              <h4>الشيخ: محمد أيوب</h4>
             </div>
 
-            <div class="cover-song"
-                 data-audio="https://server11.mp3quran.net/yasser/007.mp3"
-                 data-title="سورة الأعراف - الشيخ ياسر الدوسري">
-              <img src="images/الدوسري.jpeg" />
-              <h3>سورة الأعراف</h3>
+            <div class="cover-song3"
+                 data-audio="نادرة/_وهي_تجري_بهم_في_موج_كالجبال__المقطع_كامل_،_للشيخ_المنشاوي(256k).mp3"
+                 data-title=" وهي تجري بهم في موج كالجبال - المنشاوي">
+              <img src="صور نادر/المنشاوي3.jpg" />
+              <h3>سورة هود</h3>
+              <h4>الشيخ: محمد صديق المنشاوي</h4>
+            </div>
+
+            <div class="cover-song3"
+                 data-audio="نادرة/قل لمن الأرض ومن فيها إن كنتم تعلمون - الآية ٨٤ إلى ١٠٤ - سورة المؤمنون - ياسر الدوسري - شاشة سوداء (4).m4a"
+                 data-title="سورة المؤمنون - الشيخ ياسر الدوسري">
+              <img src="صور نادر/المؤمنون الدوسري.jpg" />
+              <h3>سورة المؤمنون</h3>
               <h4>الشيخ: ياسر الدوسري</h4>
             </div>
-
-            <div class="cover-song"
-                 data-audio="https://server7.mp3quran.net/s_gmd/009.mp3"
-                 data-title="سورة التوبة - الشيخ سعد الغامدي">
-              <img src="images/الغامدي.jpeg" />
-              <h3>سورة التوبة</h3>
-              <h4>الشيخ: سعد الغامدي</h4>
+            
+            <div class="cover-song3"
+                 data-audio="نادرة/_GMKZR~1.MP3"
+                 data-title="يا قوم إنما هذه الحياة الدنيا متاع - المنشاوي">
+              <img src="صور نادر/غافر المنشاوي.jpg" />
+              <h3>سورة غافر</h3>
+              <h4> الشيخ: محمد صديق المنشاوي</h4>
             </div>
 
-            <div class="cover-song"
-                 data-audio="https://server10.mp3quran.net/minsh/011.mp3"
-                 data-title="سورة هود - الشيخ المنشاوي">
-              <img src="images/المنشاوي.jpeg" />
-              <h3>سورة هود</h3>
-              <h4>الشيخ: المنشاوي</h4>
+            <div class="cover-song3"
+                 data-audio="نادرة/إبداع وتألق الشيخ الحصري  في تلاوة نادرة من عزاء جمال عبد الناصر - نوادر القراء.mp3"
+                 data-title="سورة آل عمران - الشيخ محمود خليل الحصري">
+              <img src="صور نادر/ال عمران الحصري.jpg" />
+              <h3>سورة آل عمران</h3>
+              <h4>الشيخ :محمود خليل الحصري</h4>
             </div>
 
-            <div class="cover-song"
-                 data-audio="https://server12.mp3quran.net/maher/012.mp3"
-                 data-title="سورة يوسف - الشيخ ماهر المعيقلي">
-              <img src="images/المعيقلي.jpeg" />
-              <h3>سورة يوسف</h3>
-              <h4>الشيخ: ماهر المعيقلي</h4>
+              <div class="cover-song3"
+                   data-audio="نادرة/صوت هيثم الدخين - سلوى المحزون وسكينة الروح [BygIC3djQZg].mp3"
+                   data-title="الأنبياء- هيثم الدخين">
+                <img src="صور نادر/الانبياء الدخين.jpg" />
+                <h3> سورة الأنبياء </h3>
+                <h4>الشيخ: هيثم الدخين </h4>
+              </div>
+
+      
+          
+
+            <div class="cover-song3"
+                 data-audio="نادرة/تلاوة_مباركة_من_سورة__الأحزاب__يتلوها_الشيخ_محمد_أيوب_يوسف(256k).mp3"
+                 data-title="سورة الأحزاب - الشيخ ممحمد أيوب ">
+              <img src="صور نادر/الاحزاب ايوب.jpg" />
+              <h3>سورة الأحزاب</h3>
+              <h4>الشيخ: محمد أيوب</h4>
             </div>
 
-            <div class="cover-song"
-                 data-audio="https://server13.mp3quran.net/husr/036.mp3"
-                 data-title="سورة يس - الشيخ محمود خليل الحصري">
-              <img src="images/الحصري.jpeg" />
-              <h3>سورة يس</h3>
-              <h4>الشيخ: محمود خليل الحصري</h4>
+            <div class="cover-song3"
+                 data-audio="نادرة/تلاوة من تراويح الحرم المكي من سورتي النمل والقصص الشيخ علي جابر 19-9-1407هـ [PZc4625CvAo] (1).mp3"
+                 data-title="سورتا النمل والقصص - الشيخ علي جابر">
+              <img src="صور نادر/علي جابر النمل.jpg" />
+              <h3>سورتا النمل والقصص</h3>
+              <h4>الشيخ: علي جابر</h4>
+            </div>
+            
+            <div class="cover-song3"
+                 data-audio="نادرة/أروع ماجود الشيخ عبد الباسط عبد الصمد لقصار السور  تلاوة أذهلت السامعين على مر السنين - موقع الشيخ عبد الباسط عبد الصمد (1).mp3"
+                 data-title="سورة الانفطار  - عبد الباسط عبد الصمد">
+              <img src="صور نادر/الانفطار عبد الباسط.jpg" />
+              <h3> سورة الانفطار </h3>
+              <h4>الشيخ: عبد الباسط عبد الصمد </h4>
             </div>
 
-          </div>
+            <div class="cover-song3"
+             data-audio="نادرة/صوت هيثم الدخين - سلوى المحزون وسكينة الروح [BygIC3djQZg].mp3"
+                 data-title="سورة المؤمنون - هيثم الدخين">
+              <img src="صور نادر/المرمنون الدخين.jpg" />
+              <h3> سورة المؤمنون </h3>
+              <h4>الشيخ: هيثم الدخين </h4>
+            </div>
+            
         </section>
 
-        <section class="station">
+
+
+
+
+
+
+        
+          <section id="virtues" class="station">
 
           <h1 class="section-heading">
             <i class="fas fa-quran"></i> فضائل سور القرآن الكريم
@@ -159,7 +375,7 @@
         </section>
 
         <!-- أحدث التلاوات -->
-        <section class="latest_english">
+          <section id="latest" class="latest_english">
           <h1 class="section-heading">
             <i class="fas fa-compact-disc"></i> أحدث التلاوات
           </h1>
@@ -209,7 +425,7 @@
             </a>
           </div>
         </section>
-        <section class="popular_artist">
+          <section id="readers" class="popular_artist">
           <h1 class="section-heading">
             <i class="fas fa-user-friends"></i>القراء
           </h1>
@@ -256,53 +472,7 @@
             </div>
           </div>
         </section>
-      </main>
-
-      <aside>
-        <h2 class="recommended-header">تفاسير القرآن الكريم</h2>
-        <div class="recommended-list">
-          <a href="https://shamela.ws/book/23604" target="_blank">
-            <div class="aside-playlist">
-              <img src="موقع قران/ابن كثير.jpg" />
-              <div class="heading-container">
-                <h3>"تفسير ابن كثير"</h3>
-              </div>
-              <div class="heart"><i class="far fa-bookmark"></i></div>
-            </div>
-          </a>
-
-          <a href="https://shamela.ws/book/23604" target="_blank">
-            <div class="aside-playlist">
-              <img src="موقع قران/الطبري.jpg" />
-              <div class="heading-container">
-                <h3>"تفسير الطبري"</h3>
-              </div>
-              <div class="heart"><i class="far fa-bookmark"></i></div>
-            </div>
-          </a>
-
-          <a href="https://shamela.ws/book/7798" target="_blank">
-            <div class="aside-playlist">
-              <img src="موقع قران/القرطبي.jpg" />
-              <div class="heading-container">
-                <h3>"تفسير القرطبي"</h3>
-              </div>
-              <div class="heart"><i class="far fa-bookmark"></i></div>
-            </div>
-          </a>
-
-          <a href="https://read.tafsir.one/alsidi#pg_1" target="_blank">
-            <div class="aside-playlist">
-              <img src="موقع قران/السعدي.jpg" />
-              <div class="heading-container">
-                <h3>"تفسير السعدي"</h3>
-              </div>
-              <div class="heart"><i class="far fa-bookmark"></i></div>
-            </div>
-          </a>
-        </div>
-      </aside>
-
+      </main>      
       <div id="floating-div">
         
         <a href="#"><h3>Click Here to Close</h3></a>
@@ -327,94 +497,168 @@
         </div>
         <div id="play-image">
           <img src="Home_pics/happier.jpg" />
+          
         </div>
       </div>
     </div>
-      <script>
-    document.addEventListener("DOMContentLoaded", function() {
+  
+          <script>
+          document.addEventListener("DOMContentLoaded", () => {
 
-      const images = document.querySelectorAll(".station-image img");
+            const audioPlayer = document.getElementById("audioPlayer");
+            const playPauseBtn = document.getElementById("playPauseBtn");
+            const currentTitle = document.getElementById("currentTitle");
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
 
-      images.forEach(function(img) {
-        img.style.cursor = "pointer"; // للتأكد بصريًا
-        img.addEventListener("click", function() {
-          const surah = this.dataset.surah;
-          window.location.href = "surah.html?name=" + surah;
-        });
+            const coversOld = document.querySelectorAll(".cover-image");
+            const coversNew = document.querySelectorAll(".cover-song");
+            const coversSeven = document.querySelectorAll(".cover-song7");
+            const coversOne = document.querySelectorAll(".cover-song1");
+            const coversThree = document.querySelectorAll(".cover-song3"); // ✅ تلاوات نادرة
+
+            let currentType = null; // 'old', 'new', 'seven', 'one', 'three'
+            let currentIndex = -1;
+
+            function togglePlayPause() {
+              if (!audioPlayer.src) return;
+
+              if (audioPlayer.paused) {
+                audioPlayer.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+              } else {
+                audioPlayer.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+              }
+            }
+
+            function playItem(index, type) {
+              let covers;
+
+              if (type === 'old') covers = coversOld;
+              else if (type === 'new') covers = coversNew;
+              else if (type === 'seven') covers = coversSeven;
+              else if (type === 'one') covers = coversOne;
+              else if (type === 'three') covers = coversThree;
+
+              if (!covers || index < 0 || index >= covers.length) return;
+
+              currentIndex = index;
+              currentType = type;
+
+              document
+                .querySelectorAll(".cover-image, .cover-song, .cover-song7, .cover-song1, .cover-song3")
+                .forEach(c => c.classList.remove("active"));
+
+              const cover = covers[index];
+              cover.classList.add("active");
+
+              audioPlayer.src = cover.getAttribute("data-audio");
+              currentTitle.textContent = cover.getAttribute("data-title");
+
+              audioPlayer.play();
+              playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+
+            // تسجيل الضغط لكل قسم
+            coversOld.forEach((cover, index) =>
+              cover.addEventListener("click", () => playItem(index, 'old'))
+            );
+
+            coversNew.forEach((cover, index) =>
+              cover.addEventListener("click", () => playItem(index, 'new'))
+            );
+
+            coversSeven.forEach((cover, index) =>
+              cover.addEventListener("click", () => playItem(index, 'seven'))
+            );
+
+            coversOne.forEach((cover, index) =>
+              cover.addEventListener("click", () => playItem(index, 'one'))
+            );
+
+            coversThree.forEach((cover, index) =>
+              cover.addEventListener("click", () => playItem(index, 'three'))
+            );
+
+            playPauseBtn.addEventListener("click", togglePlayPause);
+
+            prevBtn.addEventListener("click", () => {
+              if (currentIndex > 0) {
+                playItem(currentIndex - 1, currentType);
+              }
+            });
+
+            nextBtn.addEventListener("click", () => {
+              let covers;
+
+              if (currentType === 'old') covers = coversOld;
+              else if (currentType === 'new') covers = coversNew;
+              else if (currentType === 'seven') covers = coversSeven;
+              else if (currentType === 'one') covers = coversOne;
+              else if (currentType === 'three') covers = coversThree;
+
+              if (covers && currentIndex < covers.length - 1) {
+                playItem(currentIndex + 1, currentType);
+              }
+            });
+
+            audioPlayer.addEventListener("ended", () => {
+              playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+            });
+
+          });
+          </script>
+  <script>
+  const audioControls = document.querySelector('.audio-controls');
+
+  let timer;
+  window.addEventListener('mousemove', () => {
+      audioControls.classList.add('show'); // يظهر عند تحريك الماوس
+
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+          audioControls.classList.remove('show'); // يختفي بعد 2 ثانية
+      }, 2000);
+  });
+    
+
+    // جلب كل الصور في قسم الفضائل
+    const surahImages = document.querySelectorAll("#virtues .station-image img");
+
+    surahImages.forEach(img => {
+      // تغيير شكل المؤشر عند المرور على الصورة
+      img.style.cursor = "pointer";
+
+      // حدث عند الضغط على الصورة
+      img.addEventListener("click", () => {
+        const surah = img.dataset.surah; // اسم السورة من data-surah
+        // فتح صفحة السورة وتمرير الاسم كـ query parameter
+        window.location.href = `surah.html?name=${surah}`;
       });
-
     });
-    </script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const audioPlayer = document.getElementById("audioPlayer");
-        const playPauseBtn = document.getElementById("playPauseBtn");
-        const currentTitle = document.getElementById("currentTitle");
-        const prevBtn = document.getElementById("prevBtn");
-        const nextBtn = document.getElementById("nextBtn");
-        
-        const coversOld = document.querySelectorAll(".cover-image");
-        const coversNew = document.querySelectorAll(".cover-song");
-        
-        let currentType = null; // 'old' or 'new'
-        let currentIndex = -1;
 
-        function togglePlayPause() {
-          if (!audioPlayer.src) return;
-          if (audioPlayer.paused) {
-            audioPlayer.play();
-            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-          } else {
-            audioPlayer.pause();
-            playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-          }
-        }
+    // في صفحة السورة، نعرض الاسم داخل الصندوق (اختياري)
+    const params = new URLSearchParams(window.location.search);
+    const surahName = params.get("name");
 
-        function playItem(index, type) {
-          const covers = (type === 'old') ? coversOld : coversNew;
-          if (index < 0 || index >= covers.length) return;
-          
-          currentIndex = index;
-          currentType = type;
-
-          // Clear active states
-          document.querySelectorAll(".cover-image, .cover-song").forEach(c => c.classList.remove("active"));
-          
-          const cover = covers[index];
-          cover.classList.add("active");
-
-          audioPlayer.src = cover.getAttribute("data-audio");
-          currentTitle.textContent = cover.getAttribute("data-title");
-          audioPlayer.play();
-          playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        }
-
-        coversOld.forEach((cover, index) => {
-          cover.addEventListener("click", () => playItem(index, 'old'));
-        });
-
-        coversNew.forEach((cover, index) => {
-          cover.addEventListener("click", () => playItem(index, 'new'));
-        });
-
-        playPauseBtn.addEventListener("click", togglePlayPause);
-        
-        prevBtn.addEventListener("click", () => {
-          if (currentIndex > 0) playItem(currentIndex - 1, currentType);
-        });
-        
-        nextBtn.addEventListener("click", () => {
-          const covers = (currentType === 'old') ? coversOld : coversNew;
-          if (currentIndex < covers.length - 1) playItem(currentIndex + 1, currentType);
-        });
-
-        audioPlayer.addEventListener("ended", () => {
-          playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-        });
-      });
-    </script>
+    const surahContainer = document.getElementById("surahContent");
+    if (surahName) {
+      surahContainer.textContent = `تم اختيار السورة: ${surahName}`;
+      // لاحقًا يمكن استبدال النص بمحتوى السورة الحقيقي
+    }
+  </script>
 
 
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy;بالقرآن نحيا _ 26</p>
+      <h4>AHMED NASSER</h4>
+      <a href="https://www.instagram.com/g2da_n/#" target="_blank" class="instagram-link" title="">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </footer>
 
 
   </body>

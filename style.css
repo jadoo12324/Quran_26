@@ -54,40 +54,54 @@ main {
 }
 
 /* ============ Aside (تفاسير) ============ */
+/* ====== بطاقات الـ aside ====== */
 .aside-playlist {
-    width: 340px;
-    height: 100px;
-    display: flex ;
+    width: 100%;             /* ليملأ عرض الـ aside */
+    max-width: 280px;        /* أقصى عرض */
+    height: 90px;             /* تصغير الارتفاع قليلاً */
+    display: flex;
     align-items: center;
+    gap: 10px;                /* مسافة بين الصورة والنص */
     background: linear-gradient(90deg, #020617, #111827);
-    padding: 6px 10px;   /* صغرنا الطول */
-    border-radius: 8px;
+    padding: 8px 12px;
+    border-radius: 10px;
     border: 1px solid #1f2937;
     text-decoration: none;
     color: #e5e7eb;
-    transition: background 0.2s ease, border-color 0.2s ease;
-  
+    transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
 }
 
-/* صغرنا الصورة شوي */
+/* صورة البطاقة */
 .aside-playlist img {
-    width: 75px;
-    height: 75px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    margin-left: 8px;
     object-fit: cover;
 }
 
-/* هوفر ثابت بدون حركة */
+/* النص داخل البطاقة */
+.aside-playlist span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e5e7eb;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* هوفر ثابت بدون حركة مفرطة */
 .aside-playlist:hover {
     background: #0f172a;
     border-color: #74ADC8;
+    transform: translateX(3px); /* حركة خفيفة توحي بالتفاعل */
 }
 
 /* ============ Section headings ============ */
 .section-heading {
     font-size: 22px;
     margin-bottom: 15px;
+    margin-top: 15px;
+    margin-right: 30px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -102,6 +116,7 @@ main {
 
 /* ============ Cover images ============ */
 .cover-image {
+    margin-right: 50px;
     width: 180px;
     height: 180px;
     border-radius: 16px;
@@ -136,7 +151,7 @@ main {
     position: relative;
     width: 260px;
     height: 150px;
-    border-radius: 12px;
+    border-radius: 10px;
     overflow: hidden;
     padding-left: 130px;
     display: flex;
@@ -178,11 +193,15 @@ main {
 .play-song h3 {
     font-size: 17px;
     margin-bottom: 6px;
+    margin-left: 5px;
+    margin-right: 14px;
 }
 
 .play-song h4 {
     font-size: 14px;
     color: #a0c4ff;
+    margin-left: 5px;
+    margin-right: 14px;
 }
 
 /* زر التشغيل */
@@ -203,12 +222,7 @@ main {
     justify-content: center;
 }
 
-/* زر التشغيل يكون أكبر شوي */
-#playPauseBtn {
-    width: 65px;
-    height: 65px;
-    font-size: 24px;
-}
+
 
 /* عند المرور */
 .audio-controls button:hover {
@@ -434,4 +448,454 @@ main {
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   color: #fff;
   z-index: 999;
+}
+/* ====== القسم ====== */
+.seven {
+  padding: 60px 40px;
+  direction: rtl;
+  background: none; /* حذف الخلفية */
+}
+
+/* عنوان القسم */
+.seven .section-heading {
+  font-size: 26px;
+  margin-bottom: 40px;
+  color: #1e3a2f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-right: 4px solid #1e3a2f;
+  padding-right: 12px;
+}
+
+/* ====== الشبكة ====== */
+.section-content7 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 25px;
+}
+
+/* ====== البطاقة ====== */
+.cover-song7 {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  padding: 10px;
+}
+
+/* حركة خفيفة */
+.cover-song7:hover {
+  transform: translateY(-6px);
+}
+
+/* الصورة الدائرية */
+.cover-song7 img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;        /* يخليها دائرة */
+  object-fit: cover;
+  margin-bottom: 12px;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* تكبير خفيف عند الهوفر */
+.cover-song7:hover img {
+  transform: scale(1.07);
+}
+
+/* اسم السورة */
+.cover-song7 h3 {
+  font-size: 16px;
+  margin: 8px 0 4px;
+  color: #1e3a2f;
+}
+
+/* اسم الشيخ */
+.cover-song7 h4 {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+/* موبايل */
+@media (max-width: 768px) {
+  .cover-song img {
+    width: 120px;
+    height: 120px;
+  }
+}
+/* ====== قسم العشر الأخير ====== */
+.one {
+  padding: 60px 40px;
+  direction: rtl;
+  background: none; /* حذف الخلفية */
+}
+
+/* عنوان القسم */
+.one .section-heading {
+  font-size: 26px;
+  margin-bottom: 40px;
+  color: #1e3a2f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-right: 4px solid #1e3a2f;
+  padding-right: 12px;
+}
+
+/* ====== الشبكة ====== */
+.section-content1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 25px;
+}
+
+/* ====== البطاقة ====== */
+.cover-song1 {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  padding: 10px;
+}
+
+/* حركة خفيفة */
+.cover-song1:hover {
+  transform: translateY(-6px);
+}
+
+/* الصورة الدائرية */
+.cover-song1 img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;        /* يخليها دائرة */
+  object-fit: cover;
+  margin-bottom: 12px;
+  transition: 0.3s;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* تكبير خفيف عند الهوفر */
+.cover-song1:hover img {
+  transform: scale(1.07);
+}
+
+/* اسم السورة */
+.cover-song1 h3 {
+  font-size: 16px;
+  margin: 8px 0 4px;
+  color: #1e3a2f;
+}
+
+/* اسم الشيخ */
+.cover-song1 h4 {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+}
+
+/* زر التشغيل */
+.cover-song1 .play-btn {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  background-color: #1e3a2f;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.cover-song1 .play-btn:hover {
+  background-color: #145a44;
+}
+
+/* ====== موبايل ====== */
+@media (max-width: 768px) {
+  .cover-song1 img {
+    width: 120px;
+    height: 120px;
+  }
+}
+/* إخفاء مشغل الصوت الافتراضي */
+#audioPlayer {
+  display: none;
+}
+/* مسافة بين القسم والذي قبله وبعده */
+.nader {
+  margin: 70px 0; /* مسافة علوية وسفلية واضحة */
+  padding: 0 40px;
+}
+
+/* تنسيق الحاوية الداخلية */
+.nader .section-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 50px; /* مسافات متساوية بين العناصر */
+  justify-items: center;
+  margin-top: 40px;
+}
+
+/* الكارت */
+.cover-song3 {
+  width: 275px; /* كبرنا العرض */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* hover */
+.cover-song3:hover {
+  transform: translateY(-5px);
+}
+
+/* الصورة */
+.cover-song3 img {
+  width: 275px;   /* عرض أكبر */
+  height: 170px;  /* نفس الطول القديم */
+  object-fit: cover;
+  border-radius: 23%;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* العناوين */
+.cover-song3 h3 {
+  margin-top: 15px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.cover-song3 h4 {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+}
+.nader .section-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap:79px; /* زودنا المسافة بين العناصر */
+}
+/* ============================= */
+/*        شريط التنقل العلوي      */
+/* ============================= */
+
+.top-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  transition: 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.top-nav ul li a:hover {
+  background-color: #145c45;
+  color: #ffd700;   /* لون ذهبي عند المرور */
+}
+
+/* تنعيم الانتقال بين الأقسام */
+html {
+  scroll-behavior: smooth;
+}
+.body-header {
+  background-color: transparent; /* الهيدر بدون أي خلفية */
+  color: white; /* النصوص باللون الأبيض */
+  display: flex;
+  justify-content: center; /* في منتصف الصفحة */
+  align-items: center;
+  padding: 25px 40px; /* زيادة الحشو لراحة العين */
+  margin-top: 60px; /* مسافة أكبر من أعلى الصفحة */
+  gap: 50px; /* مسافة بين العناصر */
+  position: relative;
+  z-index: 100;
+}
+
+.body-header #logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.body-header #logo-image img {
+  height: 50px;
+  border-radius: 12px; /* حواف ناعمة */
+  transition: transform 0.3s;
+}
+
+.body-header #logo-image img:hover {
+  transform: scale(1.05); /* تكبير خفيف عند المرور */
+}
+
+.top-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px; /* مسافة واضحة بين الروابط */
+  margin: 0;
+  padding: 0;
+}
+
+.top-nav ul li a {
+  color: white; /* نصوص الروابط باللون الأبيض */
+  text-decoration: none;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 15px 5px 15px 5px; /* حواف مايلة */
+  transition: all 0.3s;
+}
+
+.top-nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* تأثير عند المرور */
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.page-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+/* التفاسير على اليسار */
+.sidebar {
+  width: 360px;
+  flex-shrink: 0;
+}
+
+/* قائمة التفاسير */
+.recommended-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+/* الحاوية الأساسية لتقسيم الصفحة */
+.page-wrapper {
+  display: flex;
+  gap: 10px; /* مسافة بين العمودين */
+  align-items: flex-start; /* لمحاذاة الأعلى */
+  flex-direction: row-reverse; /* العمود الأيمن يصبح أولاً */
+}
+
+/* العمود الأيمن: التفاسير */
+.sidebar {
+  width: 350px; /* حجم ثابت للتفاسير */
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* مسافة بين التفاسير */
+}
+
+/* عناصر التفاسير */
+.aside-playlist {
+  width: 100%; /* ليملأ عرض العمود */
+  height: 100px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #020617, #111827);
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #1f2937;
+  text-decoration: none;
+  color: #e5e7eb;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+/* الصورة داخل التفاسير */
+.aside-playlist img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-left: 8px; /* لأن العمود على اليمين */
+  object-fit: cover;
+}
+
+/* هوفر للتفاسير */
+.aside-playlist:hover {
+  background: #0f172a;
+  border-color: #74ADC8;
+}
+
+/* العمود الأيسر: المحتوى الرئيسي */
+.main-content {
+  flex: 1; /* ياخد كل المساحة الباقية */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.site-footer {
+  background: #111827;
+  color: #e5e7eb;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+  border-top: 1px solid #1f2937;
+}
+
+.site-footer .instagram-link {
+  color: #e1306c; /* لون شعار إنستقرام */
+  font-size: 24px; /* حجم الأيقونة */
+  margin-left: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.site-footer .instagram-link:hover {
+  transform: scale(1.2); /* تكبير الأيقونة عند المرور */
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.audio-controls {
+    position: relative; /* بدل fixed */
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 20px auto;
+}
+.audio-controls {
+    position: fixed;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(13, 27, 60, 0.35); /* شفافية أكثر */
+    padding: 6px 12px;                  /* أصغر حجم */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    color: #fff;
+    z-index: 999;
+    opacity: 0;                          /* يبدأ مخفي */
+    transition: opacity 0.4s ease, transform 0.3s ease;
+}
+
+/* يظهر عند التفاعل */
+.audio-controls.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* أزرار التشغيل أصغر */
+.audio-controls button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
 }
